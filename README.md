@@ -4,6 +4,8 @@
 
 바인딩 타입이 아예 안맞으면 컨트롤러 단에 진입이 안되지만 BindingResult를 사용하면 진입이 가능!!
 
+😎 RequestBody로 json이 넘어오고 객체로 변환이 실패했다면 BindingResult가 있어도 컨트롤러단에 올 수 없다.
+
 ---
 
 
@@ -40,3 +42,13 @@
 작성 후 bindingResult.reject로 에러 정보를 담아주자
 ```
 
+### 같은 객체에 다른 상황마다 다르게 벨리데이션을 적용하고 싶을땐?
+
+```
+bean validation groups를 사용하면 된다.
+@valid에는 이 기능이 없다!!!
+bean validation groups는 너무 코드도 지저분하고 상황이 다르면 객체도 많이 달라지기 때문에
+
+상황에 맞는 객체에 벨리데이션을 하는 것이 깔삼하다.
+
+```
